@@ -10,11 +10,13 @@
           <td>Paracitamol</td>
           <td>10:10</td>
         </tr>
+        <%  MedPosts.forEach(function(post) {%>
         <tr>
-          <td>Cyclodycine</td>
-          <td>2:00</td>
+          <td><%= post.title %></td>
+          <td><%= post.content %></td>
         </tr>
-      </table>
+        <% }) %>
+    </table>
 
       <footer class="colored-section" id="footer">
         <i class="social-icon fab fa-facebook-f"></i>

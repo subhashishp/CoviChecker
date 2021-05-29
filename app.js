@@ -12,6 +12,9 @@ const MedSchema = new mongoose.Schema({
 
 const Med = mongoose.model('Medicine', MedSchema);
 
+let MedPosts = [];
+
+
 
 const medicineName = "Paracitamol";
 const time = "10:10";
@@ -62,8 +65,25 @@ app.post("/parameter", function(req, res){
     res.redirect("/home");
 });
 
+
+
 app.get("/home" ,function(req ,res){
-    res.render("home");
+
+    Med.find(function(err,Posts){
+        if(err){
+            console.log(err);
+        }
+        else
+        {
+            MedPosts = Posts;
+            console.log(MedPosts);
+            res.render("home",{
+                MedPosts: MedPosts
+                });
+        };
+    });
+
+    
 });
 
 app.get("/compose" ,function(req ,res){
@@ -77,7 +97,6 @@ app.post("/compose", function(req, res){
     });
     console.log(post.title,post.content);
     post.save().then(() => console.log("waaaooowww"));
-
     res.redirect("/home");
 });
 
