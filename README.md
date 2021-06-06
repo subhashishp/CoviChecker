@@ -20,6 +20,10 @@ Analysis of user data.
 Create a mobile application of the same.
 Different portals for users and doctors to make their interaction more efficient.
 Integrate it with Google Assistant.
+
+# Technology Stack
+HTML5 CSS3 Bootstrap JavaScript Node.js Express MongoDB
+
 # Contributors:
 ## Team YAAS
 @RishikaGhosh @RounakNeogy @benequith @subhashishp @AnuragNayak
